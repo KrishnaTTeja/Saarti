@@ -14,12 +14,16 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.http.response import HttpResponse
 from django.urls import path
 from django.urls.conf import include
-
 from proj.views import specific_book
+
+def home(req):
+    return HttpResponse('home')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/external-books/<name>',specific_book),
+    path(),
     path('api/v1/books/',include('books.urls'))
 ]
