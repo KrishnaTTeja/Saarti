@@ -24,6 +24,5 @@ def home(req):
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/external-books/<name>',specific_book),
-    path(),
     path('api/v1/books/',include('books.urls'))
 ]
